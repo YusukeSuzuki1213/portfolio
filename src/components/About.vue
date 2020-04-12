@@ -5,7 +5,7 @@
       <v-row class="text-center">
         <v-col>
           <v-avatar size="200">
-            <img src="https://cdn.vuetifyjs.com/images/john.jpg" />
+            <img src="../assets/my-icon.jpeg" />
           </v-avatar>
         </v-col>
       </v-row>
@@ -86,5 +86,6 @@ table {
 
 td {
   padding-left: 30px;
+  padding-top: 5px;
 }
 </style>
