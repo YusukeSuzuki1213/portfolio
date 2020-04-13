@@ -3,7 +3,7 @@
     <AppBar />
     <v-content>
       <HelloWorld />
-      <About />
+      <About id="about" />
     </v-content>
   </v-app>
 </template>

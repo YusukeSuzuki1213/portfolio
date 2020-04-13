@@ -8,8 +8,8 @@
       <v-btn
         v-for="(content, index) in contents"
         :key="index"
-        :href="content.url"
-        target="_blank"
+        href="#"
+        v-scroll-to="content.to"
         text
       >
         <span class="mr-2">{{ content.text }}</span>
@@ -26,23 +26,23 @@ export default {
     contents: [
       {
         text: "Top",
-        url: "https://github.com"
+        to: "#top"
       },
       {
         text: "About",
-        url: "https://github.com"
+        to: "#about"
       },
       {
         text: "Skills",
-        url: "https://github.com"
+        to: "#skills"
       },
       {
         text: "Works",
-        url: "https://github.com"
+        to: "#works"
       },
       {
         text: "Posts",
-        url: "https://github.com"
+        to: "#posts"
       }
     ]
   })
