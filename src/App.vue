@@ -4,6 +4,7 @@
     <v-content>
       <HelloWorld />
       <About id="about" />
+      <Skills id="skills" />
     </v-content>
   </v-app>
 </template>
@@ -12,6 +13,7 @@
 import HelloWorld from "./components/HelloWorld";
 import AppBar from "./components/AppBar";
 import About from "./components/About";
+import Skills from "./components/Skills";
 
 export default {
   name: "App",
@@ -19,7 +21,8 @@ export default {
   components: {
     HelloWorld,
     AppBar,
-    About
+    About,
+    Skills
   },
 
   data: () => ({
