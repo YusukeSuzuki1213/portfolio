@@ -5,20 +5,20 @@
       <v-row class="text-center">
         <v-col>
           <v-avatar size="200">
-            <img src="../assets/my-icon.jpeg" />
+            <img src="../../assets/images/my-icon.jpeg" />
           </v-avatar>
         </v-col>
       </v-row>
 
       <v-row justify="center">
-        <table>
+        <table :class="$style.tableAbout">
           <tbody>
             <tr v-for="(content, index) in contents" :key="index">
-              <td>{{ content.key }}</td>
-              <td v-if="content.url">
+              <td :class="$style.tdAbout">{{ content.key }}</td>
+              <td :class="$style.tdAbout" v-if="content.url">
                 <a :href="content.url" target="_blank">{{ content.value }}</a>
               </td>
-              <td v-else>{{ content.value }}</td>
+              <td v-else :class="$style.tdAbout">{{ content.value }}</td>
             </tr>
           </tbody>
         </table>
@@ -80,11 +80,11 @@ export default {
 </script>
 
 <style module>
-table {
+.tableAbout {
   text-align: left;
 }
 
-td {
+.tdAbout {
   padding-left: 30px;
   padding-top: 5px;
 }
