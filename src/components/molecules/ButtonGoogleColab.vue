@@ -20,8 +20,8 @@ export default {
   },
   data: () => ({
     title: "Google Colab",
-    icon: "",
-    width: "150px",
+    icon: "$vuetify.icons.iconGoogleColab",
+    width: "170px",
     color: "#ffd835"
   })
 };

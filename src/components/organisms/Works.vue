@@ -32,6 +32,7 @@
               <button-youtube v-if="work.links.youtube.length" :href="work.links.youtube"></button-youtube>
               <button-site v-if="work.links.site.length" :href="work.links.site"></button-site>
               <button-google-play v-if="work.links.googlePlay.length" :href="work.links.googlePlay"></button-google-play>
+              <button-google-colab v-if="work.links.googleColab.length" :href="work.links.googleColab"></button-google-colab>
             </div>
           </div>
         </v-card-text>
@@ -45,7 +46,8 @@ export default {
   components: {
     ButtonYoutube: () => import("../molecules/ButtonYoutube"),
     ButtonSite: () => import("../molecules/ButtonSite"),
-    ButtonGooglePlay: () => import("../molecules/ButtonGooglePlay")
+    ButtonGooglePlay: () => import("../molecules/ButtonGooglePlay"),
+    ButtonGoogleColab: () => import("../molecules/ButtonGoogleColab")
   },
   data: () => ({
     works: [
@@ -110,12 +112,12 @@ export default {
           gitthub: "",
           googlePlay: "",
           googleColab:
-            "https://play.google.com/store/apps/details?id=com.clipsoft.coolsnapper&hl=ja&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+            "https://colab.research.google.com/github/YusukeSuzuki1213/fashion-MNIST/blob/master/Fashion-MNIST.ipynb"
         },
         sections: [
           {
             title: "使用技術",
-            list: ["Python", "Keras"]
+            list: ["Python", "Keras", "Jupyter notebook"]
           },
           {
             title: "説明等",
@@ -141,7 +143,7 @@ export default {
           },
           {
             title: "説明等",
-            list: [""]
+            list: ["このポートフォリオサイトです"]
           }
         ]
       }
