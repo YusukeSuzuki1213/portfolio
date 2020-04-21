@@ -1,5 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.css';
-import IconGoogleColab from '@/components/molecules/IconGoogleColab'
+import IconGoogleColab from '@/components/molecules/icon/IconGoogleColab'
+import IconQiita from '@/components/molecules/icon/IconQiita'
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
 
@@ -11,6 +12,9 @@ export default new Vuetify({
     values: {
       iconGoogleColab: {
         component: IconGoogleColab
+      },
+      iconQiita: {
+        component: IconQiita
       }
     }
   }

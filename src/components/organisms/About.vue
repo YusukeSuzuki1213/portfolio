@@ -48,31 +48,6 @@ export default {
       {
         key: "Education:",
         value: "Shizuoka University, Japan Bachelor of Informatics"
-      },
-      {
-        key: "Github:",
-        value: "YusukeSuzuki1213",
-        url: "https://github.com/YusukeSuzuki1213"
-      },
-      {
-        key: "Qiita:",
-        value: "YusukeSuzuki1213",
-        url: "https://qiita.com/YusukeSuzuki1213"
-      },
-      {
-        key: "Twitter:",
-        value: "@ss1ua2zt1us3uki",
-        url: "https://twitter.com/ss1ua2zt1us3uki"
-      },
-      {
-        key: "Facebook:",
-        value: "鈴木優佑",
-        url: "https://www.facebook.com/rzug84rke"
-      },
-      {
-        key: "Instagram:",
-        value: "yusuke.suzuki.a",
-        url: "https://www.instagram.com/yusuke.suzuki.a/"
       }
     ]
   })
