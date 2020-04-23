@@ -3,15 +3,8 @@
     <div :class="$style.title">
       <h1>Yusuke's portfolio</h1>
     </div>
-
     <div :class="$style.contents">
-      <v-btn
-        v-for="(content, index) in contents"
-        :key="index"
-        href="#"
-        v-scroll-to="content.to"
-        text
-      >
+      <v-btn :to="content.to" v-for="(content, index) in contents" :key="index" text>
         <span class="mr-2">{{ content.text }}</span>
       </v-btn>
     </div>
@@ -26,23 +19,19 @@ export default {
     contents: [
       {
         text: "Top",
-        to: "#top"
+        to: "/"
       },
       {
-        text: "About",
-        to: "#about"
-      },
-      {
-        text: "Skills",
-        to: "#skills"
+        text: "CV",
+        to: "/cv"
       },
       {
         text: "Works",
-        to: "#works"
+        to: "/works"
       },
       {
         text: "Posts",
-        to: "#posts"
+        to: "/posts"
       }
     ]
   })
