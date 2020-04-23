@@ -128,7 +128,7 @@ export default {
       {
         title: "Portfolio Site",
         subtitle: "ポートフォリオサイト",
-        src: require("../../assets/images/works/work-3.png"),
+        src: require("../../assets/images/works/work-4.png"),
         links: {
           youtube: "",
           site: "this page",

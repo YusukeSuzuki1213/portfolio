@@ -2,7 +2,6 @@
   <v-app>
     <AppBar />
     <v-content>
-      <HelloWorld />
       <About id="about" />
       <Contacts id="contacts" />
       <Skills id="skills" />
@@ -12,7 +11,6 @@
 </template>
 
 <script>
-import HelloWorld from "./components//HelloWorld";
 import AppBar from "./components/organisms/AppBar";
 import About from "./components/organisms/About";
 import Contacts from "./components/organisms/Contacts";
@@ -23,7 +21,6 @@ export default {
   name: "App",
 
   components: {
-    HelloWorld,
     AppBar,
     About,
     Contacts,
