@@ -1,7 +1,7 @@
 <template>
-<div class="skills-works">
-  <Works />
-</div>
+  <div class="skills-works">
+    <Works />
+  </div>
 </template>
 
 <script>
@@ -11,10 +11,5 @@ export default {
   components: {
     Works
   }
-}
+};
 </script>
-
-
-<style scoped>
-
-</style>

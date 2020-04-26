@@ -1,67 +1,78 @@
 <template>
-  <v-container>
-    <h2 class="text-center font-weight-bold mb-3">Works</h2>
-    <div :class="$style.worksWrap">
-      <v-card
-        v-for="(work, index) in works"
-        :key="index"
-        hover
-        class="mx-auto"
-        max-width="400"
-        :class="$style.cardWrap"
-      >
-        <v-img class="white--text align-end" height="200px" :src="work.src">
-          <v-card-title class="font-weight-black">{{ work.title }}</v-card-title>
-        </v-img>
-        <v-card-subtitle class="pb-0 text-center font-italic font-weight-bold">
-          {{
-          work.subtitle
-          }}
-        </v-card-subtitle>
-        <v-card-text class="text--prximary">
-          <div>
-            <div v-for="(section, index) in work.sections" :key="index" :class="$style.cardTetWrap">
-              <div>{{ section.title }}</div>
-              <div :class="$style.tdWorksValue">
-                <ul :class="$style.ulTdWorksValue">
-                  <li v-for="(value, index) in section.list" :key="index">{{ value }}</li>
-                </ul>
-              </div>
-            </div>
-            <div :class="$style.linkWrap">
-              <button-youtube v-if="work.links.youtube.length" :href="work.links.youtube"></button-youtube>
-              <button-site v-if="work.links.site.length" :href="work.links.site"></button-site>
-              <button-google-play v-if="work.links.googlePlay.length" :href="work.links.googlePlay"></button-google-play>
-              <button-google-colab v-if="work.links.googleColab.length" :href="work.links.googleColab"></button-google-colab>
-            </div>
+  <section class="hhh">
+    <h1 class="text-center font-weight-bold mb-3">Works</h1>
+    <div class="works-list">
+      <article v-for="(work, index) in works" :key="index" class="work-wrap">
+        <figure class="work-img">
+          <img :src="work.src" width="500" />
+        </figure>
+        <div class="work-content">
+          <div class="work-text-block-main">
+            <h2 class="work-title">{{ work.title }} ~{{ work.subtitle }}~</h2>
+            <p class="work-date">{{ work.date }}</p>
+            <p class="work-summary">{{ work.summary }}</p>
           </div>
-        </v-card-text>
-      </v-card>
+          <div class="work-text-block-bottom">
+            <IconList :contents="work.links" :button-size="buttonSize" />
+          </div>
+        </div>
+      </article>
     </div>
-  </v-container>
+  </section>
 </template>
+
 <script>
 export default {
   name: "Works",
   components: {
-    ButtonYoutube: () => import("../molecules/ButtonYoutube"),
+    IconList: () => import("@/components/molecules/IconList.vue")
+    /* ButtonYoutube: () => import("../molecules/ButtonYoutube"),
     ButtonSite: () => import("../molecules/ButtonSite"),
     ButtonGooglePlay: () => import("../molecules/ButtonGooglePlay"),
-    ButtonGoogleColab: () => import("../molecules/ButtonGoogleColab")
+    ButtonGoogleColab: () => import("../molecules/ButtonGoogleColab") */
   },
   data: () => ({
+    contents: [
+      {
+        name: "Github",
+        icon: "fab fa-github",
+        size: "20",
+        url: "https://github.com/YusukeSuzuki1213"
+      },
+      {
+        name: "Facebook",
+        icon: "fab fa-facebook-f",
+        size: "20",
+        url: "https://www.facebook.com/rzug84rke"
+      }
+    ],
+    buttonSize: {
+      width: "30",
+      height: "30"
+    },
+
     works: [
       {
         title: "Smart bath",
         subtitle: "お風呂の全自動化システム",
         src: require("../../assets/images/works/work-1.png"),
-        links: {
-          youtube: "https://www.youtube.com/watch?v=9wnW4UtuwUI",
-          site: "https://www.inf.shizuoka.ac.jp/news/detail.html?CN=154175",
-          gitthub: "",
-          googlePlay: "",
-          googleColab: ""
-        },
+        date: "20XX.2.2",
+        summary:
+          "お風呂設置されたマイクに話しかけると、自動でシャワーを出す、自動でシャンプーを出す、音楽を再生することができます。さらに、お風呂での水の使用料を計測しており、1日の水の使用料をLINEで通知してくれます。",
+        links: [
+          {
+            name: "Youtube",
+            icon: "fab fa-youtube",
+            size: "20",
+            url: "https://www.youtube.com/watch?v=9wnW4UtuwUI"
+          },
+          {
+            name: "Site",
+            icon: "fas fa-globe",
+            size: "20",
+            url: "https://www.inf.shizuoka.ac.jp/news/detail.html?CN=154175"
+          }
+        ],
         sections: [
           {
             title: "使用技術",
@@ -80,14 +91,17 @@ export default {
         title: "Cool Snapper",
         subtitle: "カッコ良くページをめくる",
         src: require("../../assets/images/works/work-2.png"),
-        links: {
-          youtube: "",
-          site: "",
-          gitthub: "",
-          googlePlay:
-            "https://play.google.com/store/apps/details?id=com.clipsoft.coolsnapper&hl=ja&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1",
-          googleColab: ""
-        },
+        date: "2018.2.2",
+        summary: "",
+        links: [
+          {
+            name: "Google Play",
+            icon: "fab fa-android",
+            size: "20",
+            url:
+              "https://play.google.com/store/apps/details?id=com.clipsoft.coolsnapper&hl=ja&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+          }
+        ],
         sections: [
           {
             title: "使用技術",
@@ -106,14 +120,24 @@ export default {
         title: "Fashion MNIST",
         subtitle: "衣服画像の分類",
         src: require("../../assets/images/works/work-3.png"),
-        links: {
-          youtube: "",
-          site: "",
-          gitthub: "",
-          googlePlay: "",
-          googleColab:
-            "https://colab.research.google.com/github/YusukeSuzuki1213/fashion-MNIST/blob/master/Fashion-MNIST.ipynb"
-        },
+        date: "2018.2.2",
+        summary: "",
+        links: [
+          {
+            name: "Github",
+            icon: "fab fa-github",
+            size: "20",
+            url:
+              "https://github.com/YusukeSuzuki1213/fashion-MNIST/tree/d15f6c292e5d79ce8ff03aec0b41d3b916233d61"
+          },
+          {
+            name: "Google Colaboratory",
+            icon: "$vuetify.icons.iconGoogleColab",
+            size: "22",
+            url:
+              "https://colab.research.google.com/github/YusukeSuzuki1213/fashion-MNIST/blob/master/Fashion-MNIST.ipynb"
+          }
+        ],
         sections: [
           {
             title: "使用技術",
@@ -129,13 +153,23 @@ export default {
         title: "Portfolio Site",
         subtitle: "ポートフォリオサイト",
         src: require("../../assets/images/works/work-4.png"),
-        links: {
-          youtube: "",
-          site: "this page",
-          gitthub: "",
-          googlePlay: "",
-          googleColab: ""
-        },
+        date: "2018.2.2",
+        summary: "",
+        links: [
+          {
+            name: "Github",
+            icon: "fab fa-github",
+            size: "20",
+            url:
+              "https://github.com/YusukeSuzuki1213/portfolio"
+          },
+          {
+            name: "Site",
+            icon: "fas fa-globe",
+            size: "20",
+            url: "https://yusukesuzuki1213.github.io/portfolio/"
+          }
+        ],
         sections: [
           {
             title: "使用技術",
@@ -175,5 +209,47 @@ export default {
 }
 .cardWrap {
   margin: 20px;
+}
+</style> 
+
+<style scoped>
+.hhh {
+  font-size: 65%;
+}
+.work-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.work-img {
+  width: 55%;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.work-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 40%;
+}
+.work-text-block-main {
+  width: 100%;
+}
+.work-title {
+}
+.work-date {
+  margin-top: 6px;
+  color: #171717;
+}
+.work-summary {
+  margin-top: 6px;
+  color: #808085;
+}
+.work-text-block-bottom {
 }
 </style>

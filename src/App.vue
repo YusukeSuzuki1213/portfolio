@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <AppBar />
     <v-content>
-      <router-view />
+    <AppBar />
+    <router-view />
     </v-content>
   </v-app>
 </template>
@@ -10,12 +10,12 @@
 <script>
 import AppBar from "@/components/organisms/AppBar";
 
-
 export default {
   name: "App",
 
   components: {
-    AppBar,
+    AppBar
   }
 };
 </script>
+
