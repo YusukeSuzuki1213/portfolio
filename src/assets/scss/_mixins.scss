@@ -1,4 +1,4 @@
-$pc-content-width: 800px;
+$pc-content-width: 750px;
 
 @mixin pc() {
   @media screen and (min-width: $pc-content-width + 1) {

@@ -2,21 +2,7 @@
   <section class="hhh">
     <h1 class="text-center font-weight-bold mb-3">Works</h1>
     <div class="works-list">
-      <article v-for="(work, index) in works" :key="index" class="work-wrap">
-        <figure class="work-img">
-          <img :src="work.src" width="500" />
-        </figure>
-        <div class="work-content">
-          <div class="work-text-block-main">
-            <h2 class="work-title">{{ work.title }} ~{{ work.subtitle }}~</h2>
-            <p class="work-date">{{ work.date }}</p>
-            <p class="work-summary">{{ work.summary }}</p>
-          </div>
-          <div class="work-text-block-bottom">
-            <IconList :contents="work.links" :button-size="buttonSize" />
-          </div>
-        </div>
-      </article>
+      <ArticleList :articles="works"/>
     </div>
   </section>
 </template>
@@ -25,32 +11,9 @@
 export default {
   name: "Works",
   components: {
-    IconList: () => import("@/components/molecules/IconList.vue")
-    /* ButtonYoutube: () => import("../molecules/ButtonYoutube"),
-    ButtonSite: () => import("../molecules/ButtonSite"),
-    ButtonGooglePlay: () => import("../molecules/ButtonGooglePlay"),
-    ButtonGoogleColab: () => import("../molecules/ButtonGoogleColab") */
+    ArticleList: () => import("@/components/molecules/ArticleList.vue")
   },
   data: () => ({
-    contents: [
-      {
-        name: "Github",
-        icon: "fab fa-github",
-        size: "20",
-        url: "https://github.com/YusukeSuzuki1213"
-      },
-      {
-        name: "Facebook",
-        icon: "fab fa-facebook-f",
-        size: "20",
-        url: "https://www.facebook.com/rzug84rke"
-      }
-    ],
-    buttonSize: {
-      width: "30",
-      height: "30"
-    },
-
     works: [
       {
         title: "Smart bath",
@@ -185,77 +148,8 @@ export default {
 };
 </script>
 
-<style module>
-.tdWorksValue {
-  padding-left: 30px;
-}
-.cardTextWrap {
-  padding-bottom: 10px;
-}
-.ulTdWorksValue {
-  display: block;
-}
-.linkWrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.worksWrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-}
-.cardWrap {
-  margin: 20px;
-}
-</style> 
-
 <style scoped lang="scss">
 .hhh {
   font-size: 65%;
-}
-.work-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 50px 15px;
-  max-width: 1000px;
-  margin: 0 auto;
-  .work-img {
-    width: 55%;
-    @include sp() {
-      width: 100%;
-    }
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-  .work-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    width: 40%;
-    @include sp() {
-      width: 100%;
-    }
-    .work-text-block-main {
-      width: 100%;
-      .work-title {
-      }
-      .work-date {
-        margin-top: 6px;
-        color: #171717;
-      }
-      .work-summary {
-        margin-top: 6px;
-        color: #808085;
-        font-size: 1.2em;
-      }
-    }
-    .work-text-block-bottom {
-    }
-  }
 }
 </style>
