@@ -160,8 +160,7 @@ export default {
             name: "Github",
             icon: "fab fa-github",
             size: "20",
-            url:
-              "https://github.com/YusukeSuzuki1213/portfolio"
+            url: "https://github.com/YusukeSuzuki1213/portfolio"
           },
           {
             name: "Site",
@@ -212,7 +211,7 @@ export default {
 }
 </style> 
 
-<style scoped>
+<style scoped lang="scss">
 .hhh {
   font-size: 65%;
 }
@@ -223,33 +222,40 @@ export default {
   padding: 50px 15px;
   max-width: 1000px;
   margin: 0 auto;
-}
-.work-img {
-  width: 55%;
-}
-img {
-  width: 100%;
-  height: auto;
-}
-.work-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  width: 40%;
-}
-.work-text-block-main {
-  width: 100%;
-}
-.work-title {
-}
-.work-date {
-  margin-top: 6px;
-  color: #171717;
-}
-.work-summary {
-  margin-top: 6px;
-  color: #808085;
-}
-.work-text-block-bottom {
+  .work-img {
+    width: 55%;
+    @include sp() {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .work-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    width: 40%;
+    @include sp() {
+      width: 100%;
+    }
+    .work-text-block-main {
+      width: 100%;
+      .work-title {
+      }
+      .work-date {
+        margin-top: 6px;
+        color: #171717;
+      }
+      .work-summary {
+        margin-top: 6px;
+        color: #808085;
+        font-size: 1.2em;
+      }
+    }
+    .work-text-block-bottom {
+    }
+  }
 }
 </style>
