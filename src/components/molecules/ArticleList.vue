@@ -1,7 +1,13 @@
 <template>
   <div>
-    <article v-for="(article, index) in articles" :key="index" class="article-wrap">
-      <figure class="article-img">
+    <article
+      v-for="(article, index) in articles"
+      :key="index"
+      class="article-wrap"
+      :class="{ hover: isClickable }"
+      @click="articleClicked()"
+    >
+      x<figure class="article-img">
         <img :src="article.src" width="500" />
       </figure>
       <div class="article-content">
@@ -27,6 +33,10 @@ export default {
     articles: {
       type: Object,
       default: () => []
+    },
+    isClickable: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -34,11 +44,27 @@ export default {
       width: "30",
       height: "30"
     }
-  })
+  }),
+  methods: {
+    articleClicked() {
+      if (this.isClickable) {
+        window.location.href =
+          "https://qiita.com/shuntaro_tamura/items/99adbe51132e0fb3c9e9";
+      }
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
+.hover {
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
 .article-wrap {
   display: flex;
   flex-wrap: wrap;

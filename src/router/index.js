@@ -23,7 +23,12 @@ const routes = [
     path: "/posts",
     name: "posts",
     component: () => import("@/views/Posts.vue")
-  }
+  },
+  {
+    path: "/post",
+    name: "post",
+    component: () => import("@/views/Article.vue")
+  },
 ];
 
 const router = new VueRouter({
